@@ -92,7 +92,7 @@ PhebiSurvey.OnLoad = function () {
         // Add the question definition to the page's questions.
         PhebiSurvey.Questions.push(question);
     }
-}
+};
 ```
 
 ## 4. Auto Next
@@ -120,6 +120,6 @@ try {
     PhebiSurvey.Init();
 }
 catch (e) {
-    alert(e);
+    console.error(e);
 }
 ```

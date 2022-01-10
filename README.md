@@ -151,3 +151,8 @@ catch (e) {
     console.error(e);
 }
 ```
+
+## 6. Test the survey.
+
+You can now test the voice enabled survey. A live example of this plugin is available online at:
+https://global.phebi.ai/Survey-Plugin/index.html

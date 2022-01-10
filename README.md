@@ -12,11 +12,11 @@ function phebi_load() {
 
     // Check if a host is defined in the settings,
     // to load the scripts from that specific host.
-    if (window.PhebiSettings != undefined && PhebiSettings.Host != undefined)
+    if (window.PhebiSettings != null && PhebiSettings.Host != null)
         host = PhebiSettings.Host;
 
     // Check if the Phebi Plugin Framework has been loaded.
-    if (document.getElementById("phebi_survey") == undefined) {
+    if (document.getElementById("phebi_survey") == null) {
         // Load the Phebi Plugin Stylesheet.
         var input = document.createElement("link");
         input.rel = "stylesheet";
@@ -32,7 +32,7 @@ function phebi_load() {
     }
     // Check if the Phebi Plugin Framework has loaded yet.
     try {
-        if (PhebiSurvey == undefined) {
+        if (PhebiSurvey == null) {
             window.setTimeout(phebi_load, 100);
             return;
         }

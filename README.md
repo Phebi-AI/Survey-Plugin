@@ -43,6 +43,7 @@ function phebi_load() {
         return;
     }
 }
+phebi_load();
 ```
 
 ## 2. Basics
@@ -71,8 +72,8 @@ PhebiSurvey.OnLoad = function () {
         question = {
             Name: questions[i].id, // The unique name of the question (Q1, Q2 etc)
             Label: label.innerText.trim(), // The question text used for the readout, if enabled.
-            Container: label // The question text control where the plugin will appear.
-            Type: questions[i].className.split('Question_')[1].split(" ")[0] // The type of the question (open, single, multi, grid).
+            Container: label, // The question text control where the plugin will appear.
+            Type: questions[i].className.split('Question_')[1].split(" ")[0], // The type of the question (open, single, multi, grid).
             Categories: []
         };
 
@@ -81,7 +82,7 @@ PhebiSurvey.OnLoad = function () {
         for (var c = 0; c < categories.length; c++) {
             category = {
                 Name: categories[c].id, // The unique name of the category (c1, c2 etc).
-                Label: categories[c].innerText.trim() // The text of the category used to build the custom language model for the question.
+                Label: categories[c].innerText.trim(), // The text of the category used to build the custom language model for the question.
                 Control: $(categories[c]).find("input")[0] // The category control that is clicked when answered via voice.
             }
 

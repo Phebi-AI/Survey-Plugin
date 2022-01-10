@@ -77,6 +77,10 @@ PhebiSurvey.OnLoad = function () {
             Categories: []
         };
 
+        if (question.Type == "open") {
+            question.Control = $(questions[i]).find("textarea")[0];
+        }
+
         categories = $(questions[i]).find(".Category");
 
         for (var c = 0; c < categories.length; c++) {

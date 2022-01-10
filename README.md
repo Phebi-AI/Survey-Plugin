@@ -81,13 +81,13 @@ PhebiSurvey.OnLoad = function () {
             question.Control = $(questions[i]).find("textarea")[0];
         }
 
-        categories = $(questions[i]).find(".Category");
+        categories = $(questions[i]).find(".Category input");
 
         for (var c = 0; c < categories.length; c++) {
             category = {
                 Name: categories[c].id, // The unique name of the category (c1, c2 etc).
-                Label: categories[c].innerText.trim(), // The text of the category used to build the custom language model for the question.
-                Control: $(categories[c]).find("input")[0] // The category control that is clicked when answered via voice.
+                Label: categories[c].parentNode.innerText.trim(), // The text of the category used to build the custom language model for the question.
+                Control: $(categories[c]) // The category control that is clicked when answered via voice.
             }
 
             // Add the category definition to the question's categories.

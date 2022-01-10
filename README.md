@@ -67,7 +67,7 @@ PhebiSurvey.OnLoad = function () {
     var question, categories, category, label;
 
     for (var i = 0; i < questions.length; i++) {
-        label = $(questions[i]).find(".Question_Label")[0];
+        label = $(questions[i]).find(".Question_Text")[0];
 
         question = {
             Name: questions[i].id, // The unique name of the question (Q1, Q2 etc)

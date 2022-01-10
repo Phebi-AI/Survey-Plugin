@@ -73,7 +73,7 @@ PhebiSurvey.OnLoad = function () {
             Name: questions[i].id, // The unique name of the question (Q1, Q2 etc)
             Label: label.innerText.trim(), // The question text used for the readout, if enabled.
             Container: label, // The question text control where the plugin will appear.
-            Type: questions[i].className.split('Question_')[1].split(" ")[0], // The type of the question (open, single, multi, grid).
+            Type: questions[i].className.split('Question_')[1].split(" ")[0].toLowerCase(), // The type of the question (open, single, multi, grid).
             Categories: []
         };
 

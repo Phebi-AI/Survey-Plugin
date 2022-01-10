@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>Sample_Survey</title>
+    <style type="text/css">
+        body {
+            background: url('https://eu2.phebi.ai/defaults/Background.png') no-repeat 100%;
+            background-size: 100% 100%;
+            font-family: Lato;
+        }
+
+        .Questions {
+            width: calc(100% - 80px - 40px);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .Question {
+            padding: 20px;
+            margin: 40px 0px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #cccccc;
+        }
+
+        .Button {
+            float: right;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 20px 10px 20px;
+            background: #048EAA;
+            color: #FFFFFF;
+            margin: 0px 0px 0px 10px;
+            transition: background .5s;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #cccccc;
+        }
+
+        .Phebi {
+            margin-top: 40px !important;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="Plugin.js"></script>
+</head>
+<body>
+    <input type="hidden" name="respondent" value="respondentid" />
+    <div class="Questions">
+        <div id="q1" class="Question Question_Open">
+            <div class="Question_Text">This is an example of an open ended question</div>
+            <textarea name="q1"></textarea>
+        </div>
+        <div id="q2" class="Question Question_Single">
+            <div class="Question_Text">This is an example of a single response question</div>
+            <div class="Categories">
+                <div class="Category">
+                    <input id="q2_1" type="radio" name="q2" />
+                    <label for="q2_1">first category</label>
+                </div>
+                <div class="Category">
+                    <input id="q2_2" type="radio" name="q2" />
+                    <label for="q2_2">second category</label>
+                </div>
+                <div class="Category">
+                    <input id="q2_3" type="radio" name="q2" />
+                    <label for="q2_3">third category</label>
+                </div>
+            </div>
+        </div>
+        <div id="q3" class="Question Question_Multi">
+            <div class="Question_Text">This is an example of a multi response question</div>
+            <div class="Categories">
+                <div class="Category">
+                    <input id="q3_1" type="checkbox" name="q3" />
+                    <label for="q3_1">Spain</label>
+                </div>
+                <div class="Category">
+                    <input id="q3_2" type="checkbox" name="q3" />
+                    <label for="q3_2">Italy</label>
+                </div>
+                <div class="Category">
+                    <input id="q3_3" type="checkbox" name="q3" />
+                    <label for="q3_3">France</label>
+                </div>
+            </div>
+        </div>
+        <div id="q4" class="Question Question_Grid">
+            <div class="Question_Text">This is an example of a grid question</div>
+            <table>
+                <tr>
+                    <td></td>
+                    <td id="c1" class="Category">Yes</td>
+                    <td id="c2" class="Category">No</td>
+                </tr>
+                <tr>
+                    <td class="Row">
+                        First row
+                    </td>
+                    <td>
+                        <input type="radio" name="q4_1_c1" />
+                    </td>
+                    <td>
+                        <input type="radio" name="q4_1_c2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Row">
+                        Second row
+                    </td>
+                    <td>
+                        <input type="radio" name="q4_2_c1" />
+                    </td>
+                    <td>
+                        <input type="radio" name="q4_2_c2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Row">
+                        Third row
+                    </td>
+                    <td>
+                        <input type="radio" name="q4_3_c1" />
+                    </td>
+                    <td>
+                        <input type="radio" name="q4_3_c2" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Button Button_Next">Next</div>
+    </div>
+</body>
+</html>

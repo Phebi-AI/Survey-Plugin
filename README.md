@@ -80,18 +80,41 @@ PhebiSurvey.OnLoad = function () {
         if (question.Type == "open") {
             question.Control = $(questions[i]).find("textarea")[0];
         }
+        else if (question.Type == "grid") {
+            question.Rows = [];
+            var rows = $(questions[i]).find(".Row");
 
-        categories = $(questions[i]).find(".Category input");
-
-        for (var c = 0; c < categories.length; c++) {
-            category = {
-                Name: categories[c].id, // The unique name of the category (c1, c2 etc).
-                Label: categories[c].parentNode.innerText.trim(), // The text of the category used to build the custom language model for the question.
-                Control: $(categories[c]) // The category control that is clicked when answered via voice.
+            for (var r = 0; r < rows.length; r++) {
+                question.Rows.push({
+                    Label: rows[r].innerText.trim(),
+                    Controls: $(rows[r].parentNode).find("input")
+                });
             }
 
-            // Add the category definition to the question's categories.
-            question.Categories.push(category);
+            categories = $(questions[i]).find(".Category");
+
+            for (var c = 0; c < categories.length; c++) {
+                question.Categories.push({
+                    Name: categories[c].id,
+                    Control: categories[c],
+                    Index: c,
+                    Label: categories[c].innerText.trim()
+                });
+            }
+        }
+        else {
+            categories = $(questions[i]).find(".Category input");
+
+            for (var c = 0; c < categories.length; c++) {
+                category = {
+                    Name: categories[c].id, // The unique name of the category (c1, c2 etc).
+                    Label: categories[c].parentNode.innerText.trim(), // The text of the category used to build the custom language model for the question.
+                    Control: categories[c] // The category control that is clicked when answered via voice.
+                };
+
+                // Add the category definition to the question's categories.
+                question.Categories.push(category);
+            }
         }
 
         // Add the question definition to the page's questions.

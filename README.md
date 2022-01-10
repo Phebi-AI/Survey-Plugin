@@ -78,5 +78,8 @@ for (var i = 0; i < questions.length; i++) {
         // Add the category definition to the question's categories.
         question.Categories.push(category);
     }
+    
+    // Add the question definition to the page's questions.
+    PhebiSurvey.Questions.push(question);
 }
 ```
